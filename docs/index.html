@@ -3,67 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hacettepe yemek listesi</title>
+<title>Üniversite Yemek Verisi</title>
+<meta name="robots" content="noindex">
 <style>
-  body { font-family: system-ui, sans-serif; max-width: 520px; margin: 2rem auto; padding: 0 1rem; }
-  h1 { font-size: 1.3rem; }
-  .row { display: flex; justify-content: space-between; padding: .4rem 0; border-bottom: 1px solid #ddd; }
-  .cat { color: #666; font-size: .8rem; text-transform: uppercase; }
-  select, button { font: inherit; padding: .3rem .5rem; margin-right: .3rem; }
-  small { color: #777; }
+  :root { --bg:#0f0c1d; --card:#1a1530; --line:#2c2548; --text:#f1f1f5; --muted:#9a96b0; --acc:#f97316; --ok:#4ade80; --warn:#fbbf24; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:15px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width:560px; margin:0 auto; padding:20px 16px 40px; }
+  h1 { font-size:1.25rem; margin:0 0 4px; }
+  p.lead { color:var(--muted); margin:0 0 18px; font-size:.88rem; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; margin-bottom:12px; }
+  .head { display:flex; justify-content:space-between; gap:8px; align-items:baseline; }
+  .head h2 { font-size:1rem; margin:0; }
+  .pill { font-size:.72rem; padding:2px 8px; border-radius:99px; border:1px solid var(--line); color:var(--muted); white-space:nowrap; }
+  .pill.ok { color:var(--ok); border-color:#22c55e55; } .pill.warn { color:var(--warn); border-color:#fbbf2455; }
+  ul { list-style:none; padding:0; margin:10px 0 0; }
+  li { display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-top:1px solid var(--line); font-size:.9rem; }
+  li small { color:var(--muted); }
+  .muted { color:var(--muted); font-size:.82rem; margin-top:8px; }
+  code { color:var(--acc); font-size:.8rem; word-break:break-all; }
 </style>
 </head>
 <body>
-  <h1>Hacettepe – Yemek listesi</h1>
-  <select id="loc"><option value="1">Beytepe</option><option value="2">Sıhhiye</option></select>
-  <select id="date"></select>
-  <select id="meal">
-    <option value="ogle">Öğle</option><option value="aksam">Akşam</option>
-    <option value="vegan">Vegan</option><option value="sabah">Kahvaltı</option>
-  </select>
-  <div id="out">Yükleniyor…</div>
-  <small id="upd"></small>
-
+<main>
+  <h1>Üniversite yemek verisi</h1>
+  <p class="lead">GitHub Actions saatte bir günceller. JSON dosyaları herkese açık ve CORS'a açıktır.
+    Uygulama: <a href="https://ogrenciyemek.com" style="color:var(--acc)">ogrenciyemek.com</a></p>
+  <div id="out"></div>
+</main>
 <script>
-  // Aynı Pages sitesinden okuyorsanız göreli yol yeterli.
-  // Başka bir sitenizden okuyacaksanız şunu yazın: "https://KULLANICI.github.io/REPO/data"
-  const DATA = "./data";
-
-  const $ = (id) => document.getElementById(id);
+  const SOURCES = [
+    { file: "hacettepe-1.json", name: "Hacettepe · Beytepe" },
+    { file: "hacettepe-2.json", name: "Hacettepe · Sıhhiye" },
+    { file: "anku.json", name: "Ankara Üniversitesi" },
+  ];
+  const MEALS = { sabah: "Kahvaltı", ogle: "Öğle", aksam: "Akşam", vegan: "Vegan" };
   const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  let cache = null;
+  const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Istanbul" });
 
-  async function loadLocation() {
-    const out = $("out");
-    out.textContent = "Yükleniyor…";
+  async function card(src) {
     try {
-      const res = await fetch(`${DATA}/hacettepe-${$("loc").value}.json`, { cache: "no-cache" });
-      if (!res.ok) throw new Error("Veri dosyası yok (" + res.status + ")");
-      cache = await res.json();
-      const dates = Object.keys(cache.days);
-      $("date").innerHTML = dates.map((d) => `<option>${d}</option>`).join("");
-      $("upd").textContent = "Son güncelleme: " + new Date(cache.updated).toLocaleString("tr-TR");
-      render();
+      const res = await fetch(`./data/${src.file}`, { cache: "no-cache" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      const d = await res.json();
+      const day = d.days?.[today];
+      const meals = day ? Object.entries(day.meals).filter(([, m]) => m.items?.length) : [];
+      const body = meals.length
+        ? meals.map(([k, m]) => `<p class="muted">${MEALS[k] || k}${m.time ? " · " + esc(m.time) : ""}${m.totalKcal ? " · " + m.totalKcal + " kcal" : ""}</p>
+            <ul>${m.items.map((i) => `<li><span>${esc(i.name)}</span><small>${i.kcal ? i.kcal + " kcal" : esc(i.category || "")}</small></li>`).join("")}</ul>`).join("")
+        : `<p class="muted">Bugün (${today}) için menü yok.</p>`;
+      const n = Object.keys(d.days || {}).length;
+      return `<section class="card"><div class="head"><h2>${esc(src.name)}</h2>
+          <span class="pill ${day ? "ok" : "warn"}">${n} gün</span></div>${body}
+          <p class="muted">Son değişiklik: ${new Date(d.updated).toLocaleString("tr-TR")}
+          ${d.issues?.length ? ` · ${d.issues.length} uyarı` : ""}<br><code>data/${esc(src.file)}</code></p></section>`;
     } catch (e) {
-      out.textContent = "Menü alınamadı: " + e.message;
+      return `<section class="card"><div class="head"><h2>${esc(src.name)}</h2><span class="pill warn">alınamadı</span></div>
+          <p class="muted">${esc(e.message)}</p></section>`;
     }
   }
-
-  function render() {
-    const day = cache?.days[$("date").value];
-    const m = day?.meals[$("meal").value];
-    const out = $("out");
-    if (!m || (!m.items.length && !m.text)) { out.textContent = "Bu öğün için menü yok."; return; }
-    out.innerHTML =
-      `<p>${m.time ?? ""} ${m.totalKcal ? "· " + m.totalKcal + " kcal" : ""}</p>` +
-      (m.items.length
-        ? m.items.map((i) => `<div class="row"><span>${esc(i.name)}<br><span class="cat">${esc(i.category)}</span></span><span>${i.kcal ?? ""} kcal</span></div>`).join("")
-        : `<p>${esc(m.text)}</p>`);
-  }
-
-  $("loc").onchange = loadLocation;
-  $("date").onchange = $("meal").onchange = render;
-  loadLocation();
+  Promise.all(SOURCES.map(card)).then((html) => (document.getElementById("out").innerHTML = html.join("")));
 </script>
 </body>
 </html>

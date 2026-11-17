@@ -1,6 +1,12 @@
 {
+  "schemaVersion": 2,
   "source": "beslenme.hacettepe.edu.tr",
-  "updated": "2026-11-17T15:39:41.796Z",
+  "sourceUrl": "https://beslenme.hacettepe.edu.tr/",
+  "updated": "2026-11-17T15:49:18.762Z",
+  "location": {
+    "id": 1,
+    "name": "Beytepe"
+  },
   "days": {
     "2026-11-17": {
       "date": "2026-11-17",
@@ -11,9 +17,73 @@
       "meals": {
         "sabah": {
           "time": "08:00-09:15",
-          "totalKcal": 0,
-          "items": [],
-          "text": "Sabah Kahvaltısı Çay Kol/Tepsi Böreği Haşlanmış Yumurta Poşet Beyaz Peynir Domates Salatalık Yeşil Zeytin Tereyağ-Bal Ekmek (50 gr)"
+          "totalKcal": null,
+          "items": [
+            {
+              "category": "KAHVALTI",
+              "name": "Çay",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Kol/Tepsi Böreği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Haşlanmış Yumurta",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Poşet Beyaz Peynir",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Domates",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Salatalık",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Yeşil Zeytin",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Tereyağ-Bal",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Ekmek (50 gr)",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
         },
         "ogle": {
           "time": "11:30 - 14:00",
@@ -169,9 +239,73 @@
       "meals": {
         "sabah": {
           "time": "08:00-09:15",
-          "totalKcal": 0,
-          "items": [],
-          "text": "Sabah Kahvaltısı Çay Poğaça Haşlanmış Yumurta Üçgen Peynir Domates Salatalık Siyah Zeytin Tereyağ-Reçel Ekmek (50 gr)"
+          "totalKcal": null,
+          "items": [
+            {
+              "category": "KAHVALTI",
+              "name": "Çay",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Poğaça",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Haşlanmış Yumurta",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Üçgen Peynir",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Domates",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Salatalık",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Siyah Zeytin",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Tereyağ-Reçel",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Ekmek (50 gr)",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
         },
         "ogle": {
           "time": "11:30 - 14:00",
@@ -329,9 +463,73 @@
       "meals": {
         "sabah": {
           "time": "08:00-09:15",
-          "totalKcal": 0,
-          "items": [],
-          "text": "Sabah Kahvaltısı Çay Simit Haşlanmış Yumurta Kaşar Peynir Domates Salatalık Yeşil Zeytin Fındık Ezmesi Ekmek (50 gr)"
+          "totalKcal": null,
+          "items": [
+            {
+              "category": "KAHVALTI",
+              "name": "Çay",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Simit",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Haşlanmış Yumurta",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Kaşar Peynir",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Domates",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Salatalık",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Yeşil Zeytin",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Fındık Ezmesi",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Ekmek (50 gr)",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
         },
         "ogle": {
           "time": "11:30 - 14:00",
@@ -491,9 +689,73 @@
       "meals": {
         "sabah": {
           "time": "08:00-09:15",
-          "totalKcal": 0,
-          "items": [],
-          "text": "Sabah Kahvaltısı Çay Kek Haşlanmış Yumurta Beyaz Peynir Domates Salatalık Siyah Zeytin Tereyağ-Bal Ekmek (50 gr)"
+          "totalKcal": null,
+          "items": [
+            {
+              "category": "KAHVALTI",
+              "name": "Çay",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Kek",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Haşlanmış Yumurta",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Beyaz Peynir",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Domates",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Salatalık",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Siyah Zeytin",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Tereyağ-Bal",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Ekmek (50 gr)",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
         },
         "ogle": {
           "time": "11:30 - 14:00",
@@ -673,9 +935,73 @@
       "meals": {
         "sabah": {
           "time": "09:00-10:00",
-          "totalKcal": 0,
-          "items": [],
-          "text": "Sabah Kahvaltısı Çay Poğaça Haşlanmış Yumurta Üçgen Peynir Domates Salatalık Yeşil Zeytin Tereyağ-Reçel Ekmek (50 gr)"
+          "totalKcal": null,
+          "items": [
+            {
+              "category": "KAHVALTI",
+              "name": "Çay",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Poğaça",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Haşlanmış Yumurta",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Üçgen Peynir",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Domates",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Salatalık",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Yeşil Zeytin",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Tereyağ-Reçel",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Ekmek (50 gr)",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
         },
         "ogle": {
           "time": "12:00 - 13:30",
@@ -850,9 +1176,73 @@
       "meals": {
         "sabah": {
           "time": "09:00-10:00",
-          "totalKcal": 0,
-          "items": [],
-          "text": "Sabah Kahvaltısı Çay Poğaça Haşlanmış Yumurta Kaşar Peynir Domates Salatalık Siyah Zeytin Tahin Pekmez Ekmek (50 gr)"
+          "totalKcal": null,
+          "items": [
+            {
+              "category": "KAHVALTI",
+              "name": "Çay",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Poğaça",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Haşlanmış Yumurta",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Kaşar Peynir",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Domates",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Salatalık",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Siyah Zeytin",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Tahin Pekmez",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Ekmek (50 gr)",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
         },
         "ogle": {
           "time": "12:00 - 13:30",
@@ -988,7 +1378,7 @@
               "allergens": [
                 {
                   "code": "L",
-                  "description": "Kükürt dioksit ve sülfitler  (tüketime hazır veya üreticilerin talimatlarına göre hazırlanan ürünler için, toplam SO2 cinsinden hesaplanan konsantrasyonu 10 mg/kg veya 10 mg/L’den daha fazla olanlar)"
+                  "description": "Kükürt dioksit ve sülfitler (tüketime hazır veya üreticilerin talimatlarına göre hazırlanan ürünler için, toplam SO2 cinsinden hesaplanan konsantrasyonu 10 mg/kg veya 10 mg/L’den daha fazla olanlar)"
                 }
               ]
             },
@@ -1013,9 +1403,73 @@
       "meals": {
         "sabah": {
           "time": "08:00-09:15",
-          "totalKcal": 0,
-          "items": [],
-          "text": "Sabah Kahvaltısı Çay Kek Haşlanmış Yumurta Beyaz Peynir Domates Salatalık Siyah Zeytin Tahin Pekmez Ekmek (50 gr)"
+          "totalKcal": null,
+          "items": [
+            {
+              "category": "KAHVALTI",
+              "name": "Çay",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Kek",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Haşlanmış Yumurta",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Beyaz Peynir",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Domates",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Salatalık",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Siyah Zeytin",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Tahin Pekmez",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Ekmek (50 gr)",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
         },
         "ogle": {
           "time": "11:30 - 14:00",
@@ -1162,5 +1616,6 @@
         }
       }
     }
-  }
+  },
+  "issues": []
 }

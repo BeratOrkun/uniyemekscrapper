@@ -79,14 +79,18 @@ Repo → **Settings → Pages** → **Build and deployment**:
 GitHub Pages `Access-Control-Allow-Origin: *` gönderdiği için başka sitelerden `fetch` çalışır.
 Kendi sitenizi de aynı Pages'te barındırıyorsanız (`docs/` içine koyun) göreli yol (`./data/...`) yeterli.
 
-## JSON biçimi
+## JSON biçimi (schemaVersion 2)
 
-`hacettepe-<konum>.json`:
+Üç dosya aynı yapıyı paylaşır: `days[YYYY-MM-DD].meals[öğün].items[]`.
+
+`hacettepe-<konum>.json` (1: Beytepe, 2: Sıhhiye) — öğünler: `sabah`, `ogle`, `aksam`, `vegan`:
 
 ```json
 {
+  "schemaVersion": 2,
   "source": "beslenme.hacettepe.edu.tr",
   "updated": "2026-11-17T15:20:11.000Z",
+  "location": { "id": 1, "name": "Beytepe" },
   "days": {
     "2026-11-17": {
       "date": "2026-11-17",
@@ -98,15 +102,43 @@ Kendi sitenizi de aynı Pages'te barındırıyorsanız (`docs/` içine koyun) g�
           "items": [ { "category": "ÇORBA", "name": "Hanımağa Çorbası", "kcal": 260, "description": null, "allergens": [] } ],
           "text": null
         },
-        "sabah": { "time": "08:00-09:15", "items": [], "text": "Sabah Kahvaltısı Çay ..." },
-        "aksam": {}, "vegan": {}
+        "sabah": { "time": "08:00-09:15", "totalKcal": null, "items": [ { "category": "KAHVALTI", "name": "Çay" } ] }
       }
     }
-  }
+  },
+  "issues": []
 }
 ```
 
-Bugünden başlayarak `DAYS_AHEAD` (varsayılan 7) günlük menü tutulur. Geçmiş günler her güncellemede düşer.
+`anku.json` — aylık Excel'den, yalnızca `ogle`:
+
+```json
+{
+  "schemaVersion": 2,
+  "month": "2026-11",
+  "title": "KASIM 2026 YEMEK MENÜSÜ",
+  "days": {
+    "2026-11-02": { "date": "2026-11-02", "meals": { "ogle": { "totalKcal": 1364, "items": [
+      { "category": "ÇORBA", "name": "Yeşil Mercimek Çorba", "kcal": 200 }
+    ] } } }
+  },
+  "issues": ["Satır 29: 2026-10-30 tarihi \"KASIM 2026 YEMEK MENÜSÜ\" ayına ait değil, atlandı"]
+}
+```
+
+`issues`: çekim sırasında atlanan/şüpheli satırlar. Menüsü olmayan günler (`days` içinde yok) yayımlanmamış demektir.
+
+### Hata önlemleri
+
+- **Tarih doğrulaması (Hacettepe):** Sayfanın tarih seçicisindeki tarih istenen tarihle aynı değilse o gün reddedilir;
+  site `?date=` parametresini yok sayarsa yanlış menü yazılmaz. "Menüsü bulunamadı" metni menü sayılmaz.
+- **Ay doğrulaması (Ankü):** Başlıktaki ay ("KASIM 2026") dışındaki tarihler ve aynı tarihe yazılmış farklı menüler atlanır.
+  Excel dışında bir şey (HTML, PDF) gelirse dosyaya dokunulmaz.
+- **Eski veriyi koruma:** Bir gün çekilemezse önceki dosyadaki aynı gün korunur; hiçbir gün çekilemezse dosya değişmez.
+- **Şema doğrulaması:** Yazmadan önce her dosya kontrol edilir; geçersiz veri yazılmaz.
+- **Testler:** `test/` altındaki gerçek sayfa örnekleriyle ayrıştırıcılar her çalıştırmada test edilir.
+  Test kırılırsa menü çekilmez, veri değişmez ve iş kırmızı olur (GitHub e-posta atar).
+- **Yeniden deneme:** Her istek 25 sn zaman aşımlı ve 3 denemeli; push çakışırsa 3 kez yeniden denenir.
 
 ## Ayarlar
 
@@ -125,20 +157,12 @@ Bugünden başlayarak `DAYS_AHEAD` (varsayılan 7) günlük menü tutulur. Geçm
       HACETTEPE_LOCATIONS: "1,2"
   ```
 
-## Ankara Üniversitesi hakkında önemli not
+## Ankara Üniversitesi
 
-Ankü menüsü `sksbasvuru.ankara.edu.tr/kayit/moduller/yemeklistesi/aylikmenu.php` adresinde.
-Bu sayfanın HTML yapısını geliştirme sırasında **açıp doğrulayamadım**. Bu yüzden `parseAnku`
-genel çalışır: sayfadaki tüm tabloları satır/hücre olarak `anku.json`'a yazar ve tarih içeren satırlara
-`date` ekler. Yapılacaklar:
-
-1. İlk çalıştırmadan sonra `docs/data/anku.json` dosyasını açın.
-2. Tablonun hangi hücrede ne olduğunu görün (ör. 1. sütun tarih, 2. çorba...).
-3. `src/parsers.mjs` içindeki `parseAnku` fonksiyonunu buna göre `{ date, soup, main, side, dessert }`
-   gibi sadeleştirin (bana `anku.json` içeriğini gösterirseniz yazabilirim).
-
-Ankü alınamazsa iş **kırmızı olmaz**; log'da sarı uyarı çıkar ve Hacettepe devam eder.
-Hacettepe için hiçbir konumdan menü alınamazsa iş kırmızı olur ve GitHub size e-posta atar.
+Ankü menüsü `sksbasvuru.ankara.edu.tr/kayit/moduller/yemeklistesi/aylikmenu.php` adresinden **aylık Excel (xlsx)**
+olarak iner. `src/xlsx.mjs` bağımlılıksız bir XLSX okuyucudur. Sayfa düzeni: A sütunu tarih (Excel seri sayısı),
+B–E yemekler (`"YEŞİL MERCİMEK ÇORBA (200 kkal)"`), F toplam (`"1364 KKAL"`). Düzen değişirse testler ve
+`issues` alanı bunu gösterir; Ankü alınamazsa iş kırmızı olmaz (sarı uyarı), eski dosya korunur.
 
 ## Sorun giderme
 
@@ -155,6 +179,7 @@ Hacettepe için hiçbir konumdan menü alınamazsa iş kırmızı olur ve GitHub
 ## Yerelde deneme
 
 ```bash
+node --test                       # ayrıştırıcı testleri
 node scripts/fetch-menus.mjs      # Node 20+; docs/data/ altına yazar
 npx serve docs                    # docs/index.html'i yerelde aç
 ```

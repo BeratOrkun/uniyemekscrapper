@@ -1,7 +1,814 @@
 {
+  "schemaVersion": 2,
   "source": "sksbasvuru.ankara.edu.tr",
-  "updated": "2026-11-17T15:39:50.506Z",
-  "tableCount": 0,
-  "tables": [],
-  "text": "PK\u0003\u0004\u0014\u0000\u0006\u0000\b\u0000\u0000\u0000!\u0000\u0001��v�\u0001\u0000\u00008\u0006\u0000\u0000\u0013\u0000\b\u0002[Content_Types].xml �\u0004\u0002(�\u0000\u0002\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�T�n�0\u0010�W�?D�V����*\u0002�>�-\u0012�\u0003L�$.�my���wc\u001e�*\u001eB ���Y���X��`UW�\u0002\u0002\u001ag3�I�\"\u0001�;ml����{�I$H�jU9 �X\u0003�A���7^{���-f�$��Rb^B�0u\u001e,W�.Ԋx\u0019 �U>S\u0005�n��(sg ,���\u0010��+Lռ��mſ7J&Ɗ�e���ʄ�2�\"\u0016*\u0017V�!i����]>�\u0019:E\u001f@i,\u0001��R\u001f 3�\u0011\u0010�`(�A�o\u000f�\u001fRS7�c�pO� /\u0013�u\"��8 ���\u0003�uDUS9�Ķ0\u0018 �P\u0005�P5�%W�\\�0�87KO�\\jg�5���;�'��f��չ��f�\b|���?� �\u001f ��z+\"̙���\u0015୏?��c.U\u0000=\"�y��\u0005��>�C\u0007�l$�����o�N�r ���I\u0017�r�w\u0011�t� �)6���v�� �g��p��hj�v�\u0013��\u0014�\u0013:�>���x��h>N\u0014�[��\u0014�ꃗ�k�OS\"[hDՃ��Sc�=�\u001d�6\u0007� ���w\u001d�P�O���\u0002޺\u0005=R9�9R1�r�� �K���As\u001ac+��\u000f�EY�����5��i��Q\u0010w�\u001a�~ ��om�4]���~\u001b��\u0019 ɉ ���-��i�^\u0016Y\u0002\u0005y��\\����\u0003YD>q\u001cW$�K�\u0004S�3�b2�k�\u0011� �T>:�3[/%s�* �}���+4�?�rV�� \u0000\u0000��\u0003\u0000PK\u0003\u0004\u0014\u0000\u0006\u0000\b\u0000\u0000\u0000!\u0000����e\u000f\u0000\u0000\u0017J\u0000\u0000\u0018\u0000\u0000\u0000xl/worksheets/sheet1.xml�\\�r\u001aI\u0012}߈�\u0007�w#� (,O\u0000M# |��o\u0018�,�\u0005dٳ���Y]�]y���\u0019����9�κ������~�Ǐ���b�]�7G���m���ey���z�~�6�o������⪼)��?�m��g���ӻr�m{Y\u0014�\u0016X��\u001e�/w�����vyY\\/��r]��/\u0017��z���|=خ7��z��� �vӃ���m-\u001cn\u001eb���X-��\\�^\u00177;kdS\\-vP���j���]/\u001fb�z��v�~�,��`���j��Y\u0019m����'_o����\u0015��G\u0010/��\u001f\u001b�o\b���b*\\�t�Zn�my���\u0003[g�����`�l,��?�L\u0010\u001fl��+#�3\u0015��*\u0005Ic+tƢ�i,m����\u001cޮΏ���⤟�i�I�\u001d�O�(͞ �$y\u0012\u000e�^o��y���k?{Z�ɫͳ�����ؽ[�ڴ.V���+\u0000�W�\u0007Ϟ\u001e4��\u00158��֦�8j\u000f�����o8\u0015����ےn�\u0016_Ί�b�+�R\u00018�ey��r�+�֋%����gY^�-\u0017F�>tG�/�O_ �̌���gy�3e�_M��=0oFЗ��f�'P��itU%ӊ�r��^��+(h܃���j\u0017�c�l�`�\u0005�}y5样΋����n\\^}X��.�N�^�\u001dD��]����;.V_/w� �V�|x�3+�K\u0018_P�N��\u0012��\u0015t\u001f��ze\u0002\u0005��ŏ��5\u001d :q���\u0001�!b�4�\u0006�/o���\u001a��$kl@�V6�/ڈ�N�O�$%6��_؀\u0012*\u001b�\u0017m��N\u0010w\u001fn!F ��౵�\u0016W���h# :I�\u001b���uCR4\u0001�\u000eM:�$�ӾQ ;��6�K�j�ߺ\u001a�� ���\u0001��\u0006\u0006\u000f,\u001axՓ�\u0017��=�\u0013\u0003\u0018\u0012֧Ҩ�� .�t�\u0019\u0001�!���-v�gO7�] B�\u0019�녙���\u0000��xv�\u001a/F?j����\u001d��\u0018\u001a\u001aKG�\u0001�\u0000\u0013[\u0018�ߟ�O\u000f����2BJT�\u0010��X!�B& �\u0011�\u001b;S�T��1R\u001a� a\u001c@ۛ\u000e���\u000e\b����o A�\u0000�l�\u001f�\u000e@N\u0015��z�\u0015�)d��\u001c\u0011�ީE�)L�1]{l���\u0001|� ��\u0007 \u0018�\u001e\u0000�u��r��6*M���C\u0004�[w0V�;\\�#� \\\u0015� �\u00142QH������S���#�5\u001e��\u001a\u000f#G7>� b�(���7�X��`�\u0002S�\u0011\"�s}�d � ��%�H\b!��.\u001feSK�\u0006\u0019�t\u0013\u0017�P�\u001a63��\u0003+U��m`\u0006���kLC�\u0018�Q�Fa_�|K� f5Վ\u0012�\u0019[N�rba'����O�\u000e��)�/��-'���\u0006kW\u0018:�����\u0013D�S�\"�z��9E�\"\u0010+���;i��\u0007\u0006�?�DS\u0004Sf ������(\u0015�x8�T���\u0005����� ;��\be��)��D;�\u0010�$p*��\u0004�\u0004`2��\u00188��F��M���\u0013�,!�\u0003>� }�C5L����� �>���\u0011�\u0017vr�\u0003^IF�04�V�\u0010}l��E�\u0013D�&\"�*d��9E�Hf���D2��H�\u001fG��\u0007�p�1r���\u0018���Ӌ�H�\u0013C�w�M8Dn9)\u0017I\u0018�b��H\u0016�\"!BDR�L!s�0����w�dl3��S�,!e�N\b0��\u001e�\u0017\u00121\"3�C痞X�M,Ǭ˝H��\u001c혉�^0\u0007]ah��\"\"Y���\b\u0011I!3��)�D2;�ߦRe\u001c\u0016\u001en�>B(qm\u001cא��\u0019B����ږ[T�5E($]�\u0010��\u001a\"������ ��(�Vf���y#��\u0019��˩\u00112\"��n�%g��DC~\"�[�#���G\u001a����$\u001e���lZ��*f��\u0014C�*��\u0019ڂ�m�1�3�+&7�{U��\u0012����q\u001a�e���͢��k1$%4�$\"�e>K}\u0019�|���>�I\\1�(�\"��1ܑ�\u0019\u001fYD�S �44g\u0010WLn^����4\u0012���\u0019��,\u0015��ӏ}�DL�\u0019����{b`L������>��㊉�O��\u0014�m4U !:�\u00144C[l�Q\u0016WL������\u0012��F4� Hu�4�p�1��\u0018\u0013�'C\u0012\u001b�=10&5�\u0016'WtyM⊉�O��\u0014��aQ\u0011!���fh�)FY\\1O�`�\u0018��]T�\u001bT�g\u0007\u001fI�:)\u0016N?�It�K��ɐ\u0014���\u0018\u0018��\u0012]� �h�kK\\1Q�)��b� �c !���fh�)FY\\1�X��\u0018�] Ukn$�M� eh�\u001c|�\u001d�L\u0005 ���-.�Ɍ\u001a�b��t\u0000��b:!�Ys\u0006q�hN`��M.QL\u001dIY\u0006˯IY�\u0001�akn�\u0000E\u0012_\u000f���Z���@m�+&sl�b���\u0000��b:;�Ys\u0006�\u00133�\u001fطb�1\u000e�}�\u001e��,>BF�\u0006 #hp\u0015\u0015���E\u0017���\u0016g�L�Ֆ��L�� )�e��.��1�}C\u0016SLg\"�Eǘ�f\u001a�3�+F3\u0011{W � d\u0005\u0017Z����\u001a�\u0010\"ɻI �\u0015�fM\u0011b���\u0003�b��,7\u0018f�5g\u0010�G�\u001f�{?�M����|�(��\u0000;Ӕ�>R*w�>ROLA\u0013$��S���@m�{���!�)��\u0003�b����f�\u0019�\u0015����+&�\u00032�? ����\u0007T��$\u0002ݒ�2�S[��KOLA\u0013\u001fi �Dk\u0012WL����\u0014��\u0001d1�t~@�� ���\u0000*\u0016�\u001aÞZ�Û\u0005��6�\u001e���\u00112�z �'�H��b2ύ$����3��\u0012�\u000f�\u001c\\m�+&sp�b���\u0000��b:?�Ys =�!w\u0003녆^j蕆^k荆�4�VC�4�^C\u001f4�QC�4�YCC�C[o�냁a�J��j����y��\u0007�=�ԃ\u001d{�\u0013\u000fv��f\u001e�Q���#�У��#�У��#�У���\u0000C�\u0007 =.0�>�c\u000e�p�=�؄�[���Qh\u0019,�\u001c�� �X8I�I��ԗ7�|����T�x̑Ydd���si�b1G��4k���5Dc\u000e�r�K�z���\u001az��3 ���; ���\u0007 }��' }�\u0010�\u001c�n�9\u001a\u001b{�̃M Ȋ��\u0010��te�n��$�[L�9\b�Rv\u000e\"s�Hb�� V�x̑� �b1Gg���b��\u0006k�\\C�k��\u001c�Ec��^�\u0007_k荆�4�VC�4�^C\u001f4�QC�4�YC\u0010sT#!�hl��2\u000f6�`�\u0007�z�c\u000fv��N=�̃5ʳ�������K\u000f�Q\u001f�9ڞGX�h��\u0003`��y�\u0007x����\u0019�\u0016���@�@\u0016�|�\u0018Y\u0004�44�P��O\u0011b�@�2 �E\u0002}ʠYs\u0006�~��2$�3��\u001e\u0015��As�]�-��2��\\\b�H�q\u001f�Y�ˇ5�nd�I\u001e�b\u001a�\u0007*\u000f�Ԛ�? �I\u001e�b/����K�� +q7�N54��\\C�5�BC/5�JC�5�FCg\u001az��w\u001az��\u000f\u001a���O\u001a��!��x��\u0015b���\u001e,�`\u0013\u000f�{��\u0007;�`\u001eه\\w6\u0006��\u001f�l\u0016V[�1\b/����_�l�1��E4�U�\u001c�i\"\u001b���kV��eҚ�a��)Bp��yϪ�*������ؓ\u0005��n���e\u0018s"
+  "sourceUrl": "https://sksbasvuru.ankara.edu.tr/kayit/moduller/yemeklistesi/aylikmenu.php",
+  "officialPage": "https://sks.ankara.edu.tr/yemek-hizmetleri-2/",
+  "updated": "2026-11-17T15:49:27.508Z",
+  "month": "2026-11",
+  "title": "KASIM 2026 YEMEK MENÜSÜ",
+  "days": {
+    "2026-11-02": {
+      "date": "2026-11-02",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1364,
+          "items": [
+            {
+              "name": "Yeşil Mercimek Çorba",
+              "kcal": 200,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Barbekü Soslu Tavuk",
+              "kcal": 601,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Soslu Makarna",
+              "kcal": 456,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Coleslaw",
+              "kcal": 107,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-03": {
+      "date": "2026-11-03",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1458,
+          "items": [
+            {
+              "name": "Şehriye Çorba",
+              "kcal": 161,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Rosto Köfte / Patates Kızartması",
+              "kcal": 737,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Bulgur Pilavı",
+              "kcal": 373,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Havuç Tarator",
+              "kcal": 187,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-04": {
+      "date": "2026-11-04",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1475,
+          "items": [
+            {
+              "name": "Kırmızı Mercimek Çorba",
+              "kcal": 204,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Tavuk Sote",
+              "kcal": 480,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Bahar Pilavı",
+              "kcal": 416,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Trileçe",
+              "kcal": 375,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-05": {
+      "date": "2026-11-05",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 840,
+          "items": [
+            {
+              "name": "Düğürcük Çorba",
+              "kcal": 196,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Pilav Üstü Et Döner",
+              "kcal": 500,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Menekşe Salata",
+              "kcal": 84,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Ayran",
+              "kcal": 60,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-06": {
+      "date": "2026-11-06",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1302,
+          "items": [
+            {
+              "name": "Sebze Çorba",
+              "kcal": 150,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Etli Kuru Fasulye",
+              "kcal": 410,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Şehriyeli Pirinç Pilavı / Turşu",
+              "kcal": 440,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Frambuaz Rüyası",
+              "kcal": 302,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-09": {
+      "date": "2026-11-09",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1516,
+          "items": [
+            {
+              "name": "Kırmızı Mercimek Çorba",
+              "kcal": 204,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Çökertme Kebap",
+              "kcal": 885,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Bulgur Pilavı",
+              "kcal": 373,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Mısırlı Aysberg Salata",
+              "kcal": 54,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-10": {
+      "date": "2026-11-10",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1494,
+          "items": [
+            {
+              "name": "Şehriye Çorba",
+              "kcal": 161,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Ispanak Yatağında Tavuk",
+              "kcal": 533,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Nohutlu Pirinç Pilavı",
+              "kcal": 435,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Red Velvet",
+              "kcal": 365,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-11": {
+      "date": "2026-11-11",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1087,
+          "items": [
+            {
+              "name": "Köylüm Çorba",
+              "kcal": 206,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "İçli Köfte",
+              "kcal": 465,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Sebze Graten",
+              "kcal": 336,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Meyve",
+              "kcal": 80,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-12": {
+      "date": "2026-11-12",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1089,
+          "items": [
+            {
+              "name": "Mantar Çorba",
+              "kcal": 136,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Kajun Baharatlı Tavuk / Ketçap-Mayonez",
+              "kcal": 413,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Soslu Spagetti",
+              "kcal": 456,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Menekşe Salata",
+              "kcal": 84,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-13": {
+      "date": "2026-11-13",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1346,
+          "items": [
+            {
+              "name": "Mahluta Çorba",
+              "kcal": 204,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "İsveç Köfte / Sebze Garnitür",
+              "kcal": 462,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Cevizli Erişte",
+              "kcal": 412,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Tiramisu",
+              "kcal": 268,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-16": {
+      "date": "2026-11-16",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1387,
+          "items": [
+            {
+              "name": "Sebze Çorba",
+              "kcal": 150,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Etli Nohut",
+              "kcal": 422,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Şehriyeli Pirinç Pilavı / Turşu",
+              "kcal": 440,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Trileçe",
+              "kcal": 375,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-17": {
+      "date": "2026-11-17",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 904,
+          "items": [
+            {
+              "name": "Hanım Ağa Çorba",
+              "kcal": 189,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "İskender Kebap",
+              "kcal": 567,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Sebze Buketi",
+              "kcal": 68,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Meyve",
+              "kcal": 80,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-18": {
+      "date": "2026-11-18",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1698,
+          "items": [
+            {
+              "name": "Fesleğenli Domates Çorba",
+              "kcal": 198,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Tavuklu Çökertme",
+              "kcal": 969,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Cevizli Erişte",
+              "kcal": 412,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Pancar Salata",
+              "kcal": 119,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-19": {
+      "date": "2026-11-19",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1373,
+          "items": [
+            {
+              "name": "Kırmızı Mercimek Çorba",
+              "kcal": 204,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Pideli Köfte",
+              "kcal": 512,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Zeytinyağlı Barbunya",
+              "kcal": 310,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Halka Tatlı",
+              "kcal": 347,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-20": {
+      "date": "2026-11-20",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1534,
+          "items": [
+            {
+              "name": "Ezogelin Çorba",
+              "kcal": 262,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Izgara Tavuk Kanat / Patates Garnitür",
+              "kcal": 756,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Soslu Makarna",
+              "kcal": 456,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Ayran",
+              "kcal": 60,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-23": {
+      "date": "2026-11-23",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1239,
+          "items": [
+            {
+              "name": "Alaca Çorba",
+              "kcal": 194,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Tavuk Döner / Lavaş / Turşu",
+              "kcal": 550,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Şehriyeli Pirinç Pilavı",
+              "kcal": 435,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Ayran",
+              "kcal": 60,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-24": {
+      "date": "2026-11-24",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1461,
+          "items": [
+            {
+              "name": "Ezogelin Çorba",
+              "kcal": 262,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Mitit Köfteli Bezelye",
+              "kcal": 376,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Mısırlı Pirinç Pilavı",
+              "kcal": 403,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Soğuk Baklava",
+              "kcal": 420,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-25": {
+      "date": "2026-11-25",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1398,
+          "items": [
+            {
+              "name": "Yayla Çorba",
+              "kcal": 168,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Tavuk Taleks",
+              "kcal": 656,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Patatesli Kol Böreği",
+              "kcal": 494,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Meyve",
+              "kcal": 80,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-26": {
+      "date": "2026-11-26",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 2142,
+          "items": [
+            {
+              "name": "Sebze Çorba",
+              "kcal": 150,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Kadınbudu Köfte / Patates Salata",
+              "kcal": 1127,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Yoğurtlu Makarna",
+              "kcal": 425,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Çikolatalı Brownie",
+              "kcal": 440,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-27": {
+      "date": "2026-11-27",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 936,
+          "items": [
+            {
+              "name": "Şehriye Çorba",
+              "kcal": 161,
+              "category": "ÇORBA",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Adana Kebap / Bulgur Pilavı",
+              "kcal": 542,
+              "category": "ANA YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Menekşe Salata",
+              "kcal": 84,
+              "category": "YARDIMCI YEMEK",
+              "description": null,
+              "allergens": []
+            },
+            {
+              "name": "Haydari",
+              "kcal": 149,
+              "category": "TATLI / YANINDA",
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    }
+  },
+  "issues": [
+    "Satır 29: 2026-10-30 tarihi \"KASIM 2026 YEMEK MENÜSÜ\" ayına ait değil, atlandı"
+  ]
 }

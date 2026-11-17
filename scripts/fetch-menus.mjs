@@ -1,17 +1,30 @@
 // Menüleri çeker, docs/data/*.json olarak yazar. Node 20+, bağımlılık yok.
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+//
+// Güvenlik önlemleri:
+//  • Her istek zaman aşımlı ve 3 denemeli (artan bekleme ile).
+//  • Hacettepe: sayfanın gösterdiği tarih istenen tarihle aynı değilse o gün REDDEDİLİR
+//    (site ?date= parametresini yok sayarsa yanlış menü yazılmaz).
+//  • Bir gün çekilemezse eski dosyadaki aynı gün korunur; hiçbir şey çekilemezse dosyaya dokunulmaz.
+//  • Ankü: yalnızca gerçek XLSX kabul edilir; ay başlığıyla uyuşmayan / çakışan tarihler atılır.
+//  • Yazmadan önce şema doğrulaması; geçersiz veri asla yazılmaz.
+//  • İçerik değişmediyse dosya yeniden yazılmaz (gereksiz commit yok).
+import { mkdir, readFile, writeFile, appendFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { parseHacettepe, parseAnku } from "../src/parsers.mjs";
+import { parseHacettepe, parseAnkuXlsx, dayHasMenu, isValidISO } from "../src/parsers.mjs";
+import { isZip } from "../src/xlsx.mjs";
 
 const OUT_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "docs", "data");
-const DAYS_AHEAD = Number(process.env.DAYS_AHEAD || 7); // bugünden itibaren kaç gün
-const LOCATIONS = (process.env.HACETTEPE_LOCATIONS || "1,2").split(",").map((s) => s.trim());
+const DAYS_AHEAD = Math.min(Math.max(Number(process.env.DAYS_AHEAD || 7), 1), 21);
+const LOCATIONS = (process.env.HACETTEPE_LOCATIONS || "1,2").split(",").map((s) => s.trim()).filter(Boolean);
 const HACETTEPE = "https://beslenme.hacettepe.edu.tr/";
 const ANKU = "https://sksbasvuru.ankara.edu.tr/kayit/moduller/yemeklistesi/aylikmenu.php";
-const UA = "Mozilla/5.0 (compatible; yemek-actions/1.0; +github-actions)";
+const UA = "Mozilla/5.0 (compatible; uniyemekscrapper/2.0; +https://github.com/BeratOrkun/uniyemekscrapper)";
+const TIMEOUT_MS = 25000;
+const SCHEMA_VERSION = 2;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const summary = [];
 
 function istanbulToday() {
   return new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Istanbul" }); // YYYY-MM-DD
@@ -22,13 +35,30 @@ function addDays(ymd, n) {
   return d.toISOString().slice(0, 10);
 }
 
-async function fetchText(url) {
-  const res = await fetch(url, { headers: { "User-Agent": UA, Accept: "text/html" } });
-  if (!res.ok) throw new Error(`${res.status} ${res.statusText} <- ${url}`);
-  const buf = await res.arrayBuffer();
-  let charset = ((res.headers.get("content-type") || "").match(/charset=([^;]+)/i) || [])[1];
+async function fetchWithRetry(url, accept, attempts = 3) {
+  let lastErr;
+  for (let i = 1; i <= attempts; i++) {
+    try {
+      const res = await fetch(url, {
+        headers: { "User-Agent": UA, Accept: accept, "Accept-Language": "tr-TR,tr;q=0.9" },
+        redirect: "follow",
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+      const buf = Buffer.from(await res.arrayBuffer());
+      return { buf, contentType: res.headers.get("content-type") || "" };
+    } catch (e) {
+      lastErr = e;
+      if (i < attempts) await sleep(i * 2500);
+    }
+  }
+  throw new Error(`${lastErr?.message || lastErr} <- ${url}`);
+}
+
+function decodeText(buf, contentType) {
+  let charset = (contentType.match(/charset=([^;]+)/i) || [])[1];
   if (!charset) {
-    const head = new TextDecoder("latin1").decode(buf.slice(0, 2048));
+    const head = buf.subarray(0, 2048).toString("latin1");
     charset = (head.match(/charset=["']?([\w-]+)/i) || [])[1] || "utf-8";
   }
   try {
@@ -38,76 +68,177 @@ async function fetchText(url) {
   }
 }
 
-// İçerik değişmediyse dosyayı yeniden yazma (gereksiz commit olmasın)
-async function writeIfChanged(name, payload, contentKey) {
-  const file = path.join(OUT_DIR, name);
-  let old = null;
+async function readOld(name) {
   try {
-    old = JSON.parse(await readFile(file, "utf8"));
-  } catch {}
-  if (old && JSON.stringify(old[contentKey]) === JSON.stringify(payload[contentKey])) {
+    return JSON.parse(await readFile(path.join(OUT_DIR, name), "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+/* ------------------------------ Şema doğrulama ------------------------------ */
+
+function validateDays(days) {
+  const errors = [];
+  if (!days || typeof days !== "object" || Array.isArray(days)) return ["days nesne değil"];
+  for (const [iso, day] of Object.entries(days)) {
+    if (!isValidISO(iso)) errors.push(`geçersiz tarih anahtarı ${iso}`);
+    if (!day || day.date !== iso) errors.push(`${iso}: date alanı anahtarla uyuşmuyor`);
+    const meals = day?.meals;
+    if (!meals || typeof meals !== "object") {
+      errors.push(`${iso}: meals yok`);
+      continue;
+    }
+    for (const [key, meal] of Object.entries(meals)) {
+      if (!Array.isArray(meal?.items)) errors.push(`${iso}/${key}: items dizi değil`);
+      else if (meal.items.length > 40) errors.push(`${iso}/${key}: şüpheli sayıda yemek (${meal.items.length})`);
+      else
+        meal.items.forEach((it, i) => {
+          if (typeof it?.name !== "string" || !it.name.trim() || it.name.length > 160) {
+            errors.push(`${iso}/${key}[${i}]: geçersiz yemek adı`);
+          }
+        });
+    }
+  }
+  return errors;
+}
+
+async function writeIfChanged(name, payload) {
+  const errors = validateDays(payload.days);
+  if (errors.length) {
+    console.error(`::error::${name} şema doğrulamasından geçmedi, YAZILMADI: ${errors.slice(0, 5).join("; ")}`);
+    return false;
+  }
+  const old = await readOld(name);
+  const same =
+    old &&
+    old.schemaVersion === payload.schemaVersion &&
+    JSON.stringify(old.days) === JSON.stringify(payload.days) &&
+    JSON.stringify(old.month ?? null) === JSON.stringify(payload.month ?? null);
+  if (same) {
     console.log(`= ${name}: değişiklik yok`);
     return false;
   }
-  await writeFile(file, JSON.stringify(payload, null, 2) + "\n", "utf8");
-  console.log(`+ ${name}: güncellendi`);
+  await writeFile(path.join(OUT_DIR, name), JSON.stringify(payload, null, 2) + "\n", "utf8");
+  console.log(`+ ${name}: güncellendi (${Object.keys(payload.days).length} gün)`);
   return true;
 }
 
-function hasMenu(day) {
-  return Object.values(day.meals).some((m) => m.items.length || m.text);
-}
+/* ------------------------------ Hacettepe ------------------------------ */
 
 async function hacettepe() {
   const today = istanbulToday();
-  let okLocations = 0;
+  let parsedPages = 0; // sayfa alındı ve doğrulandı (menü olsun olmasın)
+  let failedPages = 0; // ağ hatası ya da yapı/tarih doğrulaması başarısız
+
   for (const loc of LOCATIONS) {
+    const file = `hacettepe-${loc}.json`;
+    const old = await readOld(file);
+    const oldDays = old?.days && typeof old.days === "object" ? old.days : {};
     const days = {};
+    const issues = [];
+    let locationName = old?.location?.name || null;
+    let locParsed = 0;
+
     for (let i = 0; i < DAYS_AHEAD; i++) {
       const date = addDays(today, i);
       try {
-        const html = await fetchText(`${HACETTEPE}?date=${date}&location_id=${loc}`);
-        const day = parseHacettepe(html, date, loc);
-        if (hasMenu(day)) days[date] = day;
-        else console.log(`  (${date}, konum ${loc}: menü yok)`);
+        const { buf, contentType } = await fetchWithRetry(`${HACETTEPE}?date=${date}&location_id=${loc}`, "text/html");
+        const res = parseHacettepe(decodeText(buf, contentType), date, loc);
+        if (!res.ok) throw new Error(res.reason);
+        parsedPages++;
+        locParsed++;
+        locationName = res.day.location.name;
+        if (dayHasMenu(res.day)) days[date] = res.day;
+        else console.log(`  (${date}, konum ${loc}: menü yayımlanmamış)`);
       } catch (e) {
-        console.warn(`::warning::Hacettepe ${date} konum ${loc}: ${e.message}`);
+        failedPages++;
+        const msg = `${date}: ${e.message}`;
+        issues.push(msg);
+        console.warn(`::warning::Hacettepe konum ${loc} ${msg}`);
+        if (oldDays[date]) {
+          days[date] = oldDays[date]; // eski (doğrulanmış) veriyi koru
+          console.log(`  (${date}, konum ${loc}: önceki kayıt korundu)`);
+        }
       }
-      await sleep(600); // siteyi yormayalım
+      await sleep(700); // siteyi yormayalım
     }
-    if (Object.keys(days).length) {
-      okLocations++;
-      await writeIfChanged(
-        `hacettepe-${loc}.json`,
-        { source: "beslenme.hacettepe.edu.tr", updated: new Date().toISOString(), days },
-        "days"
-      );
-    } else {
-      console.warn(`::warning::Hacettepe konum ${loc}: hiç menü alınamadı, eski dosya korunuyor`);
+
+    if (locParsed === 0) {
+      console.warn(`::warning::Hacettepe konum ${loc}: hiçbir gün doğrulanamadı, dosyaya dokunulmadı`);
+      summary.push(`| Hacettepe ${loc} | ❌ hiçbir gün alınamadı, eski dosya korundu |`);
+      continue;
     }
+
+    await writeIfChanged(file, {
+      schemaVersion: SCHEMA_VERSION,
+      source: "beslenme.hacettepe.edu.tr",
+      sourceUrl: HACETTEPE,
+      updated: new Date().toISOString(),
+      location: { id: Number(loc), name: locationName || (loc === "2" ? "Sıhhiye" : "Beytepe") },
+      days,
+      issues,
+    });
+    summary.push(`| Hacettepe ${loc} (${locationName}) | ✅ ${Object.keys(days).length} gün menü, ${issues.length} sorun |`);
   }
-  return okLocations;
+  return { parsedPages, failedPages };
 }
+
+/* ---------------------------- Ankara Üniversitesi ---------------------------- */
 
 async function anku() {
+  const file = "anku.json";
   try {
-    const html = await fetchText(ANKU);
-    const data = parseAnku(html);
-    await writeIfChanged(
-      "anku.json",
-      { source: "sksbasvuru.ankara.edu.tr", updated: new Date().toISOString(), ...data },
-      "tables"
+    const { buf, contentType } = await fetchWithRetry(
+      ANKU,
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/octet-stream,*/*"
     );
+    if (!isZip(buf)) {
+      const head = buf.subarray(0, 200).toString("utf8").replace(/\s+/g, " ");
+      throw new Error(`XLSX beklenirken farklı içerik geldi (${contentType || "tür yok"}): ${head.slice(0, 80)}`);
+    }
+    const parsed = parseAnkuXlsx(buf);
+    parsed.issues.forEach((m) => console.warn(`::warning::Ankü: ${m}`));
+    if (!Object.keys(parsed.days).length) throw new Error("dosyada geçerli gün bulunamadı");
+
+    await writeIfChanged(file, {
+      schemaVersion: SCHEMA_VERSION,
+      source: "sksbasvuru.ankara.edu.tr",
+      sourceUrl: ANKU,
+      officialPage: "https://sks.ankara.edu.tr/yemek-hizmetleri-2/",
+      updated: new Date().toISOString(),
+      month: parsed.month,
+      title: parsed.title,
+      days: parsed.days,
+      issues: parsed.issues,
+    });
+    summary.push(`| Ankara Üniversitesi | ✅ ${parsed.title || parsed.month}: ${Object.keys(parsed.days).length} gün, ${parsed.issues.length} uyarı |`);
+    return true;
   } catch (e) {
-    // Ankü başarısız olsa da iş kırmızıya düşmesin; Hacettepe devam etsin
-    console.warn(`::warning::Ankara Üniversitesi alınamadı: ${e.message}`);
+    // Ankü başarısız olsa da iş kırmızıya düşmesin; eski dosya korunur
+    console.warn(`::warning::Ankara Üniversitesi alınamadı, eski dosya korundu: ${e.message}`);
+    summary.push(`| Ankara Üniversitesi | ⚠️ alınamadı, eski dosya korundu: ${String(e.message).slice(0, 120)} |`);
+    return false;
   }
 }
 
+/* ---------------------------------- Çalıştır ---------------------------------- */
+
 await mkdir(OUT_DIR, { recursive: true });
-const ok = await hacettepe();
+const h = await hacettepe();
 await anku();
-if (ok === 0) {
-  console.error("Hacettepe için hiçbir konumdan menü alınamadı.");
+
+if (process.env.GITHUB_STEP_SUMMARY) {
+  await appendFile(
+    process.env.GITHUB_STEP_SUMMARY,
+    ["### Yemek listeleri", "", "| Kaynak | Durum |", "|---|---|", ...summary, ""].join("\n")
+  ).catch(() => {});
+}
+console.log(summary.join("\n"));
+
+// Site ulaşılamaz ya da yapısı değişmişse (hiçbir sayfa doğrulanamadıysa) iş kırmızı olsun ve e-posta gelsin.
+// Menünün yayımlanmamış olması (tatil vb.) hata DEĞİLDİR.
+if (h.parsedPages === 0 && h.failedPages > 0) {
+  console.error("::error::Hacettepe: hiçbir sayfa doğrulanamadı (site kapalı ya da yapısı değişmiş).");
   process.exit(1);
 }

@@ -2,17 +2,20 @@ name: Yemek listelerini güncelle
 
 on:
   schedule:
+    # Saatte bir, her saatin 17. dakikasında (UTC). Tam saatte (:00) çalıştırmayın, GitHub'da yoğunluk olur.
+    # Sadece gündüz isterseniz (07:00-22:00 İstanbul): "17 4-19 * * *"
     - cron: "17 * * * *"
-  workflow_dispatch: {}
+  workflow_dispatch: {} # Actions sekmesinden elle çalıştırmak için
   push:
     branches: [main]
     paths:
       - "scripts/**"
       - "src/**"
+      - "test/**"
       - ".github/workflows/update-menus.yml"
 
 permissions:
-  contents: write
+  contents: write # data dosyalarını repoya commit'lemek için
 
 concurrency:
   group: update-menus
@@ -21,7 +24,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
@@ -29,17 +32,30 @@ jobs:
         with:
           node-version: 20
 
+      # Ayrıştırıcılar gerçek sayfa örnekleriyle test edilir. Test kırılırsa
+      # menü çekilmez ve hiçbir veri dosyası değişmez (bozuk veri yayımlanmaz).
+      - name: Ayrıştırıcı testleri
+        run: node --test
+
       - name: Menüleri çek
         run: node scripts/fetch-menus.mjs
 
       - name: Değişiklik varsa commit'le
         run: |
-          if [ -n "$(git status --porcelain docs/data)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add docs/data
-            git commit -m "Yemek listeleri güncellendi"
-            git push
-          else
+          if [ -z "$(git status --porcelain docs/data)" ]; then
             echo "Değişiklik yok."
+            exit 0
           fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data
+          git commit -m "Yemek listeleri güncellendi"
+          # Bu sırada repoya başka bir commit gelmiş olabilir: 3 kez yeniden dene
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push reddedildi, uzaktaki değişiklikler alınıp tekrar deneniyor ($i/3)..."
+            git pull --rebase -X theirs origin main || git rebase --abort
+            sleep $((i * 5))
+          done
+          echo "::error::Push 3 denemede başarısız oldu."
+          exit 1
