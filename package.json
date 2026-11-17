@@ -6,5 +6,5 @@
   "scripts": {
     "fetch": "node scripts/fetch-menus.mjs"
   },
-  "engines": { "node": ">=20" }
+  "engines": { "node": ">=22" }
 }
