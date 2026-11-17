@@ -43,7 +43,7 @@ Repo → **Settings → Actions → General → Workflow permissions** →
 ### 4. İlk çalıştırma
 Repo → **Actions** sekmesi → "Yemek listelerini güncelle" → **Run workflow**.
 Yaklaşık 1-2 dakika sürer (siteyi yormamak için istekler arasında bekler).
-Yeşil tik gelince `docs/data/` altında `hacettepe-1.json`, `hacettepe-2.json` ve (başarılıysa) `anku.json`
+Yeşil tik gelince `docs/data/` altında `hacettepe-1.json`, `hacettepe-2.json`, `anku.json` ve `gazi.json`
 oluşmuş olur. Actions'ın yaptığı commit'i **Code** sekmesinde görürsünüz.
 
 İlk çalıştırma push'la da otomatik başlayabilir (workflow dosyasında `push` tetikleyicisi var).
@@ -55,7 +55,7 @@ Repo → **Settings → Pages** → **Build and deployment**:
 
 1-2 dakika sonra site yayında: `https://KULLANICI.github.io/yemek-listesi/`
 - Ana adres bilerek boştur (404); yalnızca veri dosyaları yayındadır.
-- Veri: `.../data/hacettepe-1.json`, `.../data/hacettepe-2.json`, `.../data/anku.json`
+- Veri: `.../data/hacettepe-1.json`, `.../data/hacettepe-2.json`, `.../data/anku.json`, `.../data/gazi.json`
 
 ### 6. Kendi sitenizde kullanın
 
@@ -163,6 +163,18 @@ Ankü menüsü `sksbasvuru.ankara.edu.tr/kayit/moduller/yemeklistesi/aylikmenu.p
 olarak iner. `src/xlsx.mjs` bağımlılıksız bir XLSX okuyucudur. Sayfa düzeni: A sütunu tarih (Excel seri sayısı),
 B–E yemekler (`"YEŞİL MERCİMEK ÇORBA (200 kkal)"`), F toplam (`"1364 KKAL"`). Düzen değişirse testler ve
 `issues` alanı bunu gösterir; Ankü alınamazsa iş kırmızı olmaz (sarı uyarı), eski dosya korunur.
+
+## Gazi Üniversitesi
+
+Gazi menüsü herkese açık bir Google Sheet'ten (`src/gazi.mjs`) okunur ve `gazi.json` olarak yazılır.
+Sheet düzeni: tek sayfa, 5 sütun (Pzt–Cum); her hafta bir blok — tarih satırı (`16 Kasım 2026 Pazartesi`),
+ardından çorba, ana yemek, `*` ile etsiz alternatif, yardımcı yemek, tatlı/yanında ve `Kalori:1200` satırı.
+
+- Bir sütunda "tatil"/"bayram" geçen gün `holiday: { text }` olarak yazılır (menüsüz).
+- Gün adı tarihle uyuşmayan ya da aynı tarihe iki farklı menü girilen gün `invalid: { reason }` olarak
+  yazılır; uygulama bu günün menüsünü göstermez. Geçersiz tarihler (31 Kasım) atlanır, `issues`'a yazılır.
+- Sheet'i güncelledikten sonra beklemeden yayımlamak için: **Actions → Yemek listelerini güncelle → Run workflow**.
+- Sheet "bağlantıya sahip herkes görüntüleyebilir" ayarında kalmalıdır; kapatılırsa eski dosya korunur.
 
 ## Sorun giderme
 

@@ -6,19 +6,25 @@
 //    (site ?date= parametresini yok sayarsa yanlış menü yazılmaz).
 //  • Bir gün çekilemezse eski dosyadaki aynı gün korunur; hiçbir şey çekilemezse dosyaya dokunulmaz.
 //  • Ankü: yalnızca gerçek XLSX kabul edilir; ay başlığıyla uyuşmayan / çakışan tarihler atılır.
+//  • Gazi: Google Sheet CSV'si; tatil günleri işaretlenir, gün adı uyuşmayan / çakışan
+//    tarihler "invalid" olarak yayımlanır (menüsü gösterilmez).
 //  • Yazmadan önce şema doğrulaması; geçersiz veri asla yazılmaz.
 //  • İçerik değişmediyse dosya yeniden yazılmaz (gereksiz commit yok).
 import { mkdir, readFile, writeFile, appendFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
-import { parseHacettepe, parseAnkuXlsx, dayHasMenu, isValidISO } from "../src/parsers.mjs";
+import { parseHacettepe, parseAnkuXlsx, dayHasMenu } from "../src/parsers.mjs";
 import { isZip } from "../src/xlsx.mjs";
+import { parseGaziCsv } from "../src/gazi.mjs";
+import { validateDays } from "../src/validate.mjs";
 
 const OUT_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), "..", "docs", "data");
 const DAYS_AHEAD = Math.min(Math.max(Number(process.env.DAYS_AHEAD || 7), 1), 21);
 const LOCATIONS = (process.env.HACETTEPE_LOCATIONS || "1,2").split(",").map((s) => s.trim()).filter(Boolean);
 const HACETTEPE = "https://beslenme.hacettepe.edu.tr/";
 const ANKU = "https://sksbasvuru.ankara.edu.tr/kayit/moduller/yemeklistesi/aylikmenu.php";
+const GAZI_SHEET_ID = process.env.GAZI_SHEET_ID || "1koCBOca2hgdGno3NJ0vR_VJ0wqLxXpXR5fpJQDAjTGM";
+const GAZI_KEEP_PAST_DAYS = 42; // geçmiş haftalar en fazla 6 hafta tutulur
 const UA = "Mozilla/5.0 (compatible; uniyemekscrapper/2.0; +https://github.com/BeratOrkun/uniyemekscrapper)";
 const TIMEOUT_MS = 25000;
 const SCHEMA_VERSION = 2;
@@ -74,33 +80,6 @@ async function readOld(name) {
   } catch {
     return null;
   }
-}
-
-/* ------------------------------ Şema doğrulama ------------------------------ */
-
-function validateDays(days) {
-  const errors = [];
-  if (!days || typeof days !== "object" || Array.isArray(days)) return ["days nesne değil"];
-  for (const [iso, day] of Object.entries(days)) {
-    if (!isValidISO(iso)) errors.push(`geçersiz tarih anahtarı ${iso}`);
-    if (!day || day.date !== iso) errors.push(`${iso}: date alanı anahtarla uyuşmuyor`);
-    const meals = day?.meals;
-    if (!meals || typeof meals !== "object") {
-      errors.push(`${iso}: meals yok`);
-      continue;
-    }
-    for (const [key, meal] of Object.entries(meals)) {
-      if (!Array.isArray(meal?.items)) errors.push(`${iso}/${key}: items dizi değil`);
-      else if (meal.items.length > 40) errors.push(`${iso}/${key}: şüpheli sayıda yemek (${meal.items.length})`);
-      else
-        meal.items.forEach((it, i) => {
-          if (typeof it?.name !== "string" || !it.name.trim() || it.name.length > 160) {
-            errors.push(`${iso}/${key}[${i}]: geçersiz yemek adı`);
-          }
-        });
-    }
-  }
-  return errors;
 }
 
 async function writeIfChanged(name, payload) {
@@ -222,11 +201,58 @@ async function anku() {
   }
 }
 
+/* ---------------------------- Gazi Üniversitesi ---------------------------- */
+
+async function gazi() {
+  const file = "gazi.json";
+  const urls = [
+    `https://docs.google.com/spreadsheets/d/${GAZI_SHEET_ID}/export?format=csv`,
+    `https://docs.google.com/spreadsheets/d/${GAZI_SHEET_ID}/gviz/tq?tqx=out:csv&headers=0`,
+  ];
+  try {
+    let parsed = null;
+    let lastErr = null;
+    for (const url of urls) {
+      try {
+        const { buf } = await fetchWithRetry(url, "text/csv,*/*");
+        parsed = parseGaziCsv(buf.toString("utf8"));
+        break;
+      } catch (e) {
+        lastErr = e;
+      }
+    }
+    if (!parsed) throw lastErr || new Error("sheet okunamadı");
+    parsed.issues.forEach((m) => console.warn(`::warning::Gazi: ${m}`));
+
+    // Çok eski haftaları at (dosya şişmesin)
+    const oldest = addDays(istanbulToday(), -GAZI_KEEP_PAST_DAYS);
+    const days = Object.fromEntries(Object.entries(parsed.days).filter(([d]) => d >= oldest).sort());
+    if (!Object.keys(days).length) throw new Error("güncel tarihli gün yok");
+
+    await writeIfChanged(file, {
+      schemaVersion: SCHEMA_VERSION,
+      source: "Gazi Üniversitesi yemek listesi (Google Sheets)",
+      officialPage: "https://mediko.gazi.edu.tr/view/page/20412/yemek-listesi",
+      updated: new Date().toISOString(),
+      days,
+      issues: parsed.issues,
+    });
+    const isos = Object.keys(days);
+    summary.push(`| Gazi Üniversitesi | ✅ ${isos.length} gün (${isos[0]} → ${isos[isos.length - 1]}), ${parsed.issues.length} uyarı |`);
+    return true;
+  } catch (e) {
+    console.warn(`::warning::Gazi alınamadı, eski dosya korundu: ${e.message}`);
+    summary.push(`| Gazi Üniversitesi | ⚠️ alınamadı, eski dosya korundu: ${String(e.message).slice(0, 120)} |`);
+    return false;
+  }
+}
+
 /* ---------------------------------- Çalıştır ---------------------------------- */
 
 await mkdir(OUT_DIR, { recursive: true });
 const h = await hacettepe();
 await anku();
+await gazi();
 
 if (process.env.GITHUB_STEP_SUMMARY) {
   await appendFile(

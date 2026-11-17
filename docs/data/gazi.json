@@ -1,0 +1,1184 @@
+{
+  "schemaVersion": 2,
+  "source": "Gazi Üniversitesi yemek listesi (Google Sheets)",
+  "officialPage": "https://mediko.gazi.edu.tr/view/page/20412/yemek-listesi",
+  "updated": "2026-11-17T16:06:56.005Z",
+  "days": {
+    "2026-11-02": {
+      "date": "2026-11-02",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1150,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Mercimek Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Tas Kebabı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Patates",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Bulgur Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Yoğurt",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-03": {
+      "date": "2026-11-03",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1200,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Yayla Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Etli Taze Fasülye",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Taze Fasülye",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Patatesli Kol Böreği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Meyve",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-04": {
+      "date": "2026-11-04",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1250,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Tarhana Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Bolu Kebabı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Türlü",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Şehriyeli Pirinç Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Trileçe",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-05": {
+      "date": "2026-11-05",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1150,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Kafkas Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Tavuk Baget -Sebze Garn.",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Mantar Kavurma",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Nohutlu Pirinç Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Meyve",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-06": {
+      "date": "2026-11-06",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1250,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Ezogelin Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Yoğurtlu Tire Köfte",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Peynirli Makarna",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Barbunya Piyazı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Sütlü İrmik Tatlısı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-09": {
+      "date": "2026-11-09",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1200,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Şafak Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Etli Kuru Fasülye",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Kuru Fasülye",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Pirinç Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Baklava",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-10": {
+      "date": "2026-11-10",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1200,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Köylü Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Et Tantuni",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Mantar Kavurma",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Salata",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Ayran",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-11": {
+      "date": "2026-11-11",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1150,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Domates Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Kabak Beğendili Tavuk Pirzola",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Kabak",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Bulgur Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Meyve",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-12": {
+      "date": "2026-11-12",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1150,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Sebze Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "İzmir Köfte",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Nohut",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Pirinç Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Yoğ.lu Pancar Salatası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-13": {
+      "date": "2026-11-13",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1250,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Mercimek Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Kıymalı Karnabahar",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Karnabahar",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Peynirli Makarna",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Aşure",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-16": {
+      "date": "2026-11-16",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1200,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Yayla Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Beşamelli Kebap",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Beşamelli Sebze",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Bulgur Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Tahin Helvası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-17": {
+      "date": "2026-11-17",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1250,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Mercimek Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Tavuklu Çökertme Kebabı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Kabak Yemeği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Nohutlu Pirinç Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Kemal Paşa Tatlısı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-18": {
+      "date": "2026-11-18",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1200,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Ezogelin Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Kıymalı Pırasa",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Pırasa Yemeği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Su Böreği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Yoğurt",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-19": {
+      "date": "2026-11-19",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1200,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Mantar Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Şehriyeli Güveç",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Şehriye Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Karnabahar Havuç Kızartma-yoğurt",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Meyve",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-20": {
+      "date": "2026-11-20",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1250,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Brokoli Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Hasan Paşa Köfte",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Kuru Fasülye",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Pirinç Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Sup",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-23": {
+      "date": "2026-11-23",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1100,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Mercimek Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Kıymalı Ispanak-Yoğurt",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Ispanak Yemeği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Erişte",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Meyve",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-24": {
+      "date": "2026-11-24",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1150,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Kafkas Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Özbek Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Soslu Makarna",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Nohut Salatası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Kuru Cacık",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-25": {
+      "date": "2026-11-25",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1250,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Ezogelin Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Mantar Soslu Sahan Köfte",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Mantar Sote",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Bulgur Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Trileçe",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-26": {
+      "date": "2026-11-26",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1200,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Şehriye Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Tavuk Şinitzel- sebze garnili",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Kabak yemeği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Pirinç Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Meyve",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-27": {
+      "date": "2026-11-27",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1250,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Peskütan Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Püreli Kebap",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Soslu Makarna",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Ayvalı Portakallı Kereviz",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "İrmik Helvası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-11-30": {
+      "date": "2026-11-30",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1100,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Ezogelin Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Etsiz Bezelye",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Patatesli Kol Böreği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Kıymalı Kol Böreği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Ayran",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-12-01": {
+      "date": "2026-12-01",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1250,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Hanımağa Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Tavuk Baget -Sebze Garn.",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Taze Fasülye",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Pirinç Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Vişneli Kup",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-12-02": {
+      "date": "2026-12-02",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1200,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Mercimek Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Çiftlik Köfte",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Kabak yemeği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Soslu makarna",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Yoğurt",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-12-03": {
+      "date": "2026-12-03",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1200,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Mantar Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Pilav üstü Et Kavurması",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Etsiz Nohut Yemeği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Zeytinyağlı Pırasa",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Meyve",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-12-04": {
+      "date": "2026-12-04",
+      "meals": {
+        "ogle": {
+          "time": null,
+          "totalKcal": 1200,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Tarhana Çorbası",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ANA YEMEK",
+              "name": "Beşamel Soslu Kıymalı Karnabahar",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "ETSİZ ALTERNATİF",
+              "name": "Beşamelli Karnabahar",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "YARDIMCI YEMEK",
+              "name": "Bulgur Pilavı",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "TATLI / YANINDA",
+              "name": "Meyve",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        }
+      }
+    }
+  },
+  "issues": []
+}
