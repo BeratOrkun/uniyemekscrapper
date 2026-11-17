@@ -1,0 +1,45 @@
+name: Yemek listelerini güncelle
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch: {}
+  push:
+    branches: [main]
+    paths:
+      - "scripts/**"
+      - "src/**"
+      - ".github/workflows/update-menus.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-menus
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Menüleri çek
+        run: node scripts/fetch-menus.mjs
+
+      - name: Değişiklik varsa commit'le
+        run: |
+          if [ -n "$(git status --porcelain docs/data)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs/data
+            git commit -m "Yemek listeleri güncellendi"
+            git push
+          else
+            echo "Değişiklik yok."
+          fi
