@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hacettepe yemek listesi</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 520px; margin: 2rem auto; padding: 0 1rem; }
+  h1 { font-size: 1.3rem; }
+  .row { display: flex; justify-content: space-between; padding: .4rem 0; border-bottom: 1px solid #ddd; }
+  .cat { color: #666; font-size: .8rem; text-transform: uppercase; }
+  select, button { font: inherit; padding: .3rem .5rem; margin-right: .3rem; }
+  small { color: #777; }
+</style>
+</head>
+<body>
+  <h1>Hacettepe – Yemek listesi</h1>
+  <select id="loc"><option value="1">Beytepe</option><option value="2">Sıhhiye</option></select>
+  <select id="date"></select>
+  <select id="meal">
+    <option value="ogle">Öğle</option><option value="aksam">Akşam</option>
+    <option value="vegan">Vegan</option><option value="sabah">Kahvaltı</option>
+  </select>
+  <div id="out">Yükleniyor…</div>
+  <small id="upd"></small>
+
+<script>
+  // Aynı Pages sitesinden okuyorsanız göreli yol yeterli.
+  // Başka bir sitenizden okuyacaksanız şunu yazın: "https://KULLANICI.github.io/REPO/data"
+  const DATA = "./data";
+
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  let cache = null;
+
+  async function loadLocation() {
+    const out = $("out");
+    out.textContent = "Yükleniyor…";
+    try {
+      const res = await fetch(`${DATA}/hacettepe-${$("loc").value}.json`, { cache: "no-cache" });
+      if (!res.ok) throw new Error("Veri dosyası yok (" + res.status + ")");
+      cache = await res.json();
+      const dates = Object.keys(cache.days);
+      $("date").innerHTML = dates.map((d) => `<option>${d}</option>`).join("");
+      $("upd").textContent = "Son güncelleme: " + new Date(cache.updated).toLocaleString("tr-TR");
+      render();
+    } catch (e) {
+      out.textContent = "Menü alınamadı: " + e.message;
+    }
+  }
+
+  function render() {
+    const day = cache?.days[$("date").value];
+    const m = day?.meals[$("meal").value];
+    const out = $("out");
+    if (!m || (!m.items.length && !m.text)) { out.textContent = "Bu öğün için menü yok."; return; }
+    out.innerHTML =
+      `<p>${m.time ?? ""} ${m.totalKcal ? "· " + m.totalKcal + " kcal" : ""}</p>` +
+      (m.items.length
+        ? m.items.map((i) => `<div class="row"><span>${esc(i.name)}<br><span class="cat">${esc(i.category)}</span></span><span>${i.kcal ?? ""} kcal</span></div>`).join("")
+        : `<p>${esc(m.text)}</p>`);
+  }
+
+  $("loc").onchange = loadLocation;
+  $("date").onchange = $("meal").onchange = render;
+  loadLocation();
+</script>
+</body>
+</html>

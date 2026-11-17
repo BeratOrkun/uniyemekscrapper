@@ -1,0 +1,10 @@
+{
+  "name": "yemek-actions",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fetch": "node scripts/fetch-menus.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
