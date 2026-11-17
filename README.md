@@ -54,7 +54,7 @@ Repo → **Settings → Pages** → **Build and deployment**:
 - Branch: **main**, klasör: **/docs** → **Save**
 
 1-2 dakika sonra site yayında: `https://KULLANICI.github.io/yemek-listesi/`
-- Örnek sayfa: `.../` (docs/index.html)
+- Ana adres bilerek boştur (404); yalnızca veri dosyaları yayındadır.
 - Veri: `.../data/hacettepe-1.json`, `.../data/hacettepe-2.json`, `.../data/anku.json`
 
 ### 6. Kendi sitenizde kullanın
@@ -181,7 +181,6 @@ B–E yemekler (`"YEŞİL MERCİMEK ÇORBA (200 kkal)"`), F toplam (`"1364 KKAL"
 ```bash
 node --test                       # ayrıştırıcı testleri
 node scripts/fetch-menus.mjs      # Node 20+; docs/data/ altına yazar
-npx serve docs                    # docs/index.html'i yerelde aç
 ```
 
 ## Nezaket / yasal
