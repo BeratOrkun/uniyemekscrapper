@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "source": "beslenme.hacettepe.edu.tr",
   "sourceUrl": "https://beslenme.hacettepe.edu.tr/",
-  "updated": "2026-11-18T23:24:51.041Z",
+  "updated": "2026-11-19T07:24:44.509Z",
   "location": {
     "id": 1,
     "name": "Beytepe"
@@ -1249,7 +1249,7 @@
         },
         "ogle": {
           "time": "11:30 - 14:00",
-          "totalKcal": 1365,
+          "totalKcal": 1387,
           "items": [
             {
               "category": "ÇORBA",
@@ -1260,10 +1260,19 @@
             },
             {
               "category": "ANAYEMEK",
-              "name": "Orman Kebabı",
-              "kcal": 479,
+              "name": "Çiftlik Köfte",
+              "kcal": 501,
               "description": null,
-              "allergens": []
+              "allergens": [
+                {
+                  "code": "A",
+                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
+                },
+                {
+                  "code": "C",
+                  "description": "Yumurta ve yumurta ürünleri"
+                }
+              ]
             },
             {
               "category": "SALATA",
@@ -1289,7 +1298,7 @@
         },
         "aksam": {
           "time": "17:00 - 19:00",
-          "totalKcal": 1365,
+          "totalKcal": 1387,
           "items": [
             {
               "category": "ÇORBA",
@@ -1300,10 +1309,19 @@
             },
             {
               "category": "ANAYEMEK",
-              "name": "Orman Kebabı",
-              "kcal": 479,
+              "name": "Çiftlik Köfte",
+              "kcal": 501,
               "description": null,
-              "allergens": []
+              "allergens": [
+                {
+                  "code": "A",
+                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
+                },
+                {
+                  "code": "C",
+                  "description": "Yumurta ve yumurta ürünleri"
+                }
+              ]
             },
             {
               "category": "SALATA",
