@@ -2,239 +2,12 @@
   "schemaVersion": 2,
   "source": "beslenme.hacettepe.edu.tr",
   "sourceUrl": "https://beslenme.hacettepe.edu.tr/",
-  "updated": "2026-11-24T04:49:09.068Z",
+  "updated": "2026-11-25T00:44:23.086Z",
   "location": {
     "id": 1,
     "name": "Beytepe"
   },
   "days": {
-    "2026-11-24": {
-      "date": "2026-11-24",
-      "location": {
-        "id": 1,
-        "name": "Beytepe"
-      },
-      "meals": {
-        "sabah": {
-          "time": "08:00-09:15",
-          "totalKcal": null,
-          "items": [
-            {
-              "category": "KAHVALTI",
-              "name": "Çay",
-              "kcal": null,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "KAHVALTI",
-              "name": "Kol/Tepsi Böreği",
-              "kcal": null,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "KAHVALTI",
-              "name": "Haşlanmış Yumurta",
-              "kcal": null,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "KAHVALTI",
-              "name": "Poşet Beyaz Peynir",
-              "kcal": null,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "KAHVALTI",
-              "name": "Domates",
-              "kcal": null,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "KAHVALTI",
-              "name": "Salatalık",
-              "kcal": null,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "KAHVALTI",
-              "name": "Yeşil Zeytin",
-              "kcal": null,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "KAHVALTI",
-              "name": "Tereyağ-Bal",
-              "kcal": null,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "KAHVALTI",
-              "name": "Ekmek (50 gr)",
-              "kcal": null,
-              "description": null,
-              "allergens": []
-            }
-          ],
-          "text": null
-        },
-        "ogle": {
-          "time": "11:30 - 14:00",
-          "totalKcal": 1387,
-          "items": [
-            {
-              "category": "ÇORBA",
-              "name": "Sebze Çorbası",
-              "kcal": 161,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "ANAYEMEK",
-              "name": "Çiftlik Köfte",
-              "kcal": 501,
-              "description": null,
-              "allergens": [
-                {
-                  "code": "A",
-                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
-                },
-                {
-                  "code": "C",
-                  "description": "Yumurta ve yumurta ürünleri"
-                }
-              ]
-            },
-            {
-              "category": "SALATA",
-              "name": "Nohut Salata",
-              "kcal": 327,
-              "description": null,
-              "allergens": [
-                {
-                  "code": "A",
-                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
-                }
-              ]
-            },
-            {
-              "category": "TATLI",
-              "name": "Keşkül",
-              "kcal": 398,
-              "description": null,
-              "allergens": []
-            }
-          ],
-          "text": null
-        },
-        "aksam": {
-          "time": "17:00 - 19:00",
-          "totalKcal": 1387,
-          "items": [
-            {
-              "category": "ÇORBA",
-              "name": "Sebze Çorbası",
-              "kcal": 161,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "ANAYEMEK",
-              "name": "Çiftlik Köfte",
-              "kcal": 501,
-              "description": null,
-              "allergens": [
-                {
-                  "code": "A",
-                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
-                },
-                {
-                  "code": "C",
-                  "description": "Yumurta ve yumurta ürünleri"
-                }
-              ]
-            },
-            {
-              "category": "SALATA",
-              "name": "Nohut Salata",
-              "kcal": 327,
-              "description": null,
-              "allergens": [
-                {
-                  "code": "A",
-                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
-                }
-              ]
-            },
-            {
-              "category": "TATLI",
-              "name": "Keşkül",
-              "kcal": 398,
-              "description": null,
-              "allergens": []
-            }
-          ],
-          "text": null
-        },
-        "vegan": {
-          "time": "11:30 - 14:00",
-          "totalKcal": 1073,
-          "items": [
-            {
-              "category": "ÇORBA",
-              "name": "Sebze Çorbası",
-              "kcal": 161,
-              "description": null,
-              "allergens": []
-            },
-            {
-              "category": "VEGAN",
-              "name": "Etsiz Karnabahar",
-              "kcal": 160,
-              "description": null,
-              "allergens": [
-                {
-                  "code": "A",
-                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
-                }
-              ]
-            },
-            {
-              "category": "SALATA",
-              "name": "Nohut Salata",
-              "kcal": 327,
-              "description": null,
-              "allergens": [
-                {
-                  "code": "A",
-                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
-                }
-              ]
-            },
-            {
-              "category": "TATLI",
-              "name": "Tahin Helvası",
-              "kcal": 425,
-              "description": null,
-              "allergens": [
-                {
-                  "code": "N",
-                  "description": "Susam tohumu ve susam tohumu ürünleri"
-                }
-              ]
-            }
-          ],
-          "text": null
-        }
-      }
-    },
     "2026-11-25": {
       "date": "2026-11-25",
       "location": {
@@ -1690,6 +1463,245 @@
                   "description": "Yumurta ve yumurta ürünleri"
                 }
               ]
+            }
+          ],
+          "text": null
+        }
+      }
+    },
+    "2026-12-01": {
+      "date": "2026-12-01",
+      "location": {
+        "id": 1,
+        "name": "Beytepe"
+      },
+      "meals": {
+        "sabah": {
+          "time": "08:00-09:15",
+          "totalKcal": null,
+          "items": [
+            {
+              "category": "KAHVALTI",
+              "name": "Çay",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Kol/Tepsi Böreği",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Haşlanmış Yumurta",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Poşet Beyaz Peynir",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Domates",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Salatalık",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Yeşil Zeytin",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Tereyağ-Bal",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            },
+            {
+              "category": "KAHVALTI",
+              "name": "Ekmek (50 gr)",
+              "kcal": null,
+              "description": null,
+              "allergens": []
+            }
+          ],
+          "text": null
+        },
+        "ogle": {
+          "time": "11:30 - 14:00",
+          "totalKcal": 1092,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Tarhana Çorbası",
+              "kcal": 208,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "A",
+                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
+                }
+              ]
+            },
+            {
+              "category": "ANAYEMEK",
+              "name": "Etli Taze Fasulye",
+              "kcal": 298,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "A",
+                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
+                }
+              ]
+            },
+            {
+              "category": "MAKARNA",
+              "name": "Soslu Makarna",
+              "kcal": 375,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "A",
+                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
+                }
+              ]
+            },
+            {
+              "category": "HOŞAF",
+              "name": "Hoşaf",
+              "kcal": 211,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "L",
+                  "description": "Kükürt dioksit ve sülfitler (tüketime hazır veya üreticilerin talimatlarına göre hazırlanan ürünler için, toplam SO2 cinsinden hesaplanan konsantrasyonu 10 mg/kg veya 10 mg/L’den daha fazla olanlar)"
+                }
+              ]
+            }
+          ],
+          "text": null
+        },
+        "aksam": {
+          "time": "17:00 - 19:00",
+          "totalKcal": 1092,
+          "items": [
+            {
+              "category": "ÇORBA",
+              "name": "Tarhana Çorbası",
+              "kcal": 208,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "A",
+                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
+                }
+              ]
+            },
+            {
+              "category": "ANAYEMEK",
+              "name": "Etli Taze Fasulye",
+              "kcal": 298,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "A",
+                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
+                }
+              ]
+            },
+            {
+              "category": "MAKARNA",
+              "name": "Soslu Makarna",
+              "kcal": 375,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "A",
+                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
+                }
+              ]
+            },
+            {
+              "category": "HOŞAF",
+              "name": "Hoşaf",
+              "kcal": 211,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "L",
+                  "description": "Kükürt dioksit ve sülfitler (tüketime hazır veya üreticilerin talimatlarına göre hazırlanan ürünler için, toplam SO2 cinsinden hesaplanan konsantrasyonu 10 mg/kg veya 10 mg/L’den daha fazla olanlar)"
+                }
+              ]
+            }
+          ],
+          "text": null
+        },
+        "vegan": {
+          "time": "11:30 - 14:00",
+          "totalKcal": 914,
+          "items": [
+            {
+              "category": "VEGAN",
+              "name": "Etsiz Taze Fasulye",
+              "kcal": 198,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "A",
+                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
+                }
+              ]
+            },
+            {
+              "category": "MAKARNA",
+              "name": "Soslu Makarna",
+              "kcal": 375,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "A",
+                  "description": "Gluten içeren tahıllar: buğday (ör. kılçıksız buğday ve kamut), çavdar, arpa, yulaf veya bunların hibrit türleri ve bunların ürünleri"
+                }
+              ]
+            },
+            {
+              "category": "HOŞAF",
+              "name": "Hoşaf",
+              "kcal": 211,
+              "description": null,
+              "allergens": [
+                {
+                  "code": "L",
+                  "description": "Kükürt dioksit ve sülfitler (tüketime hazır veya üreticilerin talimatlarına göre hazırlanan ürünler için, toplam SO2 cinsinden hesaplanan konsantrasyonu 10 mg/kg veya 10 mg/L’den daha fazla olanlar)"
+                }
+              ]
+            },
+            {
+              "category": "MEYVE",
+              "name": "Meyve",
+              "kcal": 130,
+              "description": null,
+              "allergens": []
             }
           ],
           "text": null
